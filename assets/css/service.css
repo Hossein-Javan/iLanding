@@ -1,0 +1,53 @@
+.contents{
+    box-sizing: border-box;
+    border-radius: 15px;
+    padding: 20px 50px 20px 50px;
+    background: white;
+}
+#titr > h1{
+    font-size: 26px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 25px;
+}
+#titr{
+    padding-bottom: 0;
+}
+#titr > h1::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 260px;
+    height: 3px;
+    background: var(--accent-color);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+#servicedescription > p{
+    line-height: 40px;
+}
+#servicedescription > ul  {
+        list-style-type: square;
+        gap: 2rem;
+        display: flex;
+        flex-direction: column;
+}
+
+#servicedescription > ul > li {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#servicedescription > h3{
+    padding-bottom: 15px;
+}
+#content{
+    background: none;
+
+}
+img{
+    border-radius: 25px;
+    margin-bottom: 3rem;
+}

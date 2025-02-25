@@ -740,26 +740,12 @@ section,
 @media (max-width: 768px) {
   .slider {
     padding-top: 70px;
-    height: 40vh; /* افزایش ارتفاع برای موبایل */
+    height: 30vh !important; /* کاهش ارتفاع برای موبایل */
   }
 
   .swiper-slide img {
-    height: 40vh;
+    height: 30vh !important;
     object-fit: cover; /* حفظ نسبت تصویر بدون برش */
-  }
-
-  .swiper-slide {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-  }
-
-  /* تنظیم دکمه‌های موجود در اسلایدر */
-  .swiper-slide .swiper-button-next,
-  .swiper-slide .swiper-button-prev {
-    z-index: 2;
   }
 }
 
@@ -771,10 +757,8 @@ section,
 
   .swiper-slide img {
     height: 60vh;
-    object-fit: cover;
   }
 }
-
 
 /*--------------------------------------------------------------
 # Hero Section

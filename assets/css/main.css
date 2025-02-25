@@ -744,46 +744,45 @@ section,
   font-size: 30px ;
 
 }
-
-/* ریسپانسیو برای تبلت */
-@media (max-width: 768px) {
-  .slider {
-    padding-top: 70px;
-    height:50vh !important; /* کاهش ارتفاع برای تبلت */
-   
-  }
-
-  .swiper-slide img {
-    height:50vh !important;
-    object-fit: cover; /* حفظ نسبت تصویر بدون برش */
-  }
-  .swiper-button-next::after  {
-    font-size: 26px !important;
-   
-  }
-  .swiper-button-prev::after {
-    font-size: 26px !important;
-   
-  }
-
-}
-
-/* ریسپانسیو برای موبایل */
+/* موبایل */
 @media (max-width: 480px) {
   .slider {
-    height: 40vh;
+    height: 25vh;
     padding-top: 70px;
   }
 
   .swiper-slide img {
-    height: 40vh;
+    height: 25vh;
     object-fit: cover;
   }
+
   .swiper-button-next::after {
-    font-size: 18px !important;
+    font-size: 18px;
   }
-  .swiper-button-prev::after{
-    font-size: 18px !important;
+
+  .swiper-button-prev::after {
+    font-size: 18px;
+  }
+}
+
+/* تبلت */
+@media (min-width: 481px) and (max-width: 768px) {
+  .slider {
+    padding-top: 70px;
+    height: 50vh;
+  }
+
+  .swiper-slide img {
+    height: 50vh;
+    object-fit: cover;
+  }
+
+  .swiper-button-next::after {
+    font-size: 26px;
+  }
+
+  .swiper-button-prev::after {
+    font-size: 26px;
   }
 }
 

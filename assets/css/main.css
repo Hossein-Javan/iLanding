@@ -753,7 +753,7 @@ section,
 
   .swiper-slide img {
     height: 30vh;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .swiper-button-next::after {

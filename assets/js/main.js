@@ -200,4 +200,3 @@ var swiper = new Swiper(".mySwiper", {
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
-})();

@@ -683,8 +683,6 @@ section,
   position: relative;
   padding: 0;
   overflow: hidden;
-  margin-top: 90px;
-  
 }
 
 .swiper {
@@ -742,11 +740,11 @@ section,
 @media (max-width: 768px) {
   .slider {
     padding-top: 70px;
-    height: 30vh !important; /* کاهش ارتفاع برای موبایل */
+    height:40vh !important; /* کاهش ارتفاع برای موبایل */
   }
 
   .swiper-slide img {
-    height: 30vh !important;
+    height:40vh !important;
     object-fit: cover; /* حفظ نسبت تصویر بدون برش */
   }
 }
@@ -755,6 +753,7 @@ section,
 @media (max-width: 1024px) {
   .slider {
     height: 60vh;
+    margin-top: 90px;
   }
 
   .swiper-slide img {

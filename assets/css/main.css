@@ -2525,32 +2525,3 @@ section,
     margin-top: -20px;
   }
 }
-
-.header-container {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-.header-image {
-  width: 100%;
-  height: auto;
-}
-.header-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2rem;
-  font-weight: bold;
-}
-.header-text h1 {
-  margin: 0;
-}
-.header-text span.yellow {
-  color: yellow;
-}
-@media (max-width: 768px) {
-  .header-image {
-      margin-top: calc(10% + 15px);
-  }
-}

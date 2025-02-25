@@ -40,47 +40,51 @@ var swiper = new Swiper(".mySwiper", {
   window.addEventListener('load', toggleScrolled);
 
  /**
- * Mobile nav toggle
- */
-const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+   * Mobile nav toggle (باز و بسته کردن منوی همبرگری)
+   */
+ const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+ const body = document.querySelector('body');
 
-function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
-}
-if (mobileNavToggleBtn) {
-    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
-}
+ function mobileNavToogle() {
+     body.classList.toggle('mobile-nav-active');
+     mobileNavToggleBtn.classList.toggle('bi-list');
+     mobileNavToggleBtn.classList.toggle('bi-x');
+ }
 
-/**
- * Hide mobile nav on same-page/hash links (به جز مواردی که dropdown دارند)
- */
-document.querySelectorAll('#navmenu a:not(.dropdown-toggle)').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-        if (document.querySelector('.mobile-nav-active')) {
-            mobileNavToogle();
-        }
-    });
-});
+ if (mobileNavToggleBtn) {
+     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+ }
 
-/**
- * Toggle mobile nav dropdowns (اصلاح برای جلوگیری از بسته شدن)
- */
-document.querySelectorAll('.navmenu .dropdown > a').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
-        e.preventDefault();
-        this.parentNode.classList.toggle('active'); // اضافه کردن کلاس active برای منوی والد
-        let dropdownMenu = this.nextElementSibling; // یافتن زیرمنو
+ /**
+  * جلوگیری از بسته شدن منو هنگام کلیک روی زیرمنو در موبایل
+  */
+ document.querySelectorAll('.navmenu .dropdown > a').forEach(dropdownLink => {
+     dropdownLink.addEventListener('click', function (e) {
+         e.preventDefault(); // جلوگیری از اجرای لینک #
+         
+         let dropdownMenu = this.nextElementSibling; // یافتن زیرمنو
+         if (dropdownMenu && dropdownMenu.tagName === "UL") {
+             dropdownMenu.classList.toggle('dropdown-active'); // نمایش یا مخفی کردن زیرمنو
+         }
 
-        if (dropdownMenu && dropdownMenu.tagName === "UL") {
-            dropdownMenu.classList.toggle('dropdown-active');
-        }
+         this.parentNode.classList.toggle('active'); // اضافه کردن کلاس active برای نمایش استایل منو باز شده
 
-        e.stopImmediatePropagation();
-    });
-});
+         e.stopImmediatePropagation(); // جلوگیری از بسته شدن کل منو
+     });
+ });
 
+ /**
+  * بستن منوی همبرگری هنگام کلیک روی لینک‌های معمولی (به جز آیتم‌های dropdown)
+  */
+ document.querySelectorAll('#navmenu a:not(.dropdown > a)').forEach(navmenu => {
+     navmenu.addEventListener('click', function () {
+         if (body.classList.contains('mobile-nav-active')) {
+             mobileNavToogle(); // بستن منو هنگام کلیک روی لینک‌های غیر dropdown
+         }
+     });
+ });
+
+})();
 
   /**
    * Scroll top button

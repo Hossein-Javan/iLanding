@@ -744,23 +744,7 @@ section,
   font-size: 30px ;
 
 }
-/* ریسپانسیو برای موبایل */
-@media (max-width: 480px) {
-  .slider {
-    height: 40vh;
-    padding-top: 70px;
-  }
 
-  .swiper-slide img {
-    height: 40vh;
-  }
-  .swiper-button-next::after {
-    font-size: 18px !important;
-  }
-  .swiper-button-prev::after{
-    font-size: 18px !important;
-  }
-}
 /* ریسپانسیو برای تبلت */
 @media (max-width: 768px) {
   .slider {
@@ -771,7 +755,7 @@ section,
 
   .swiper-slide img {
     height:50vh !important;
-    object-fit: contain; /* حفظ نسبت تصویر بدون برش */
+    object-fit: cover; /* حفظ نسبت تصویر بدون برش */
   }
   .swiper-button-next::after  {
     font-size: 26px !important;
@@ -782,6 +766,25 @@ section,
    
   }
 
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 480px) {
+  .slider {
+    height: 40vh;
+    padding-top: 70px;
+  }
+
+  .swiper-slide img {
+    height: 40vh;
+    object-fit: cover;
+  }
+  .swiper-button-next::after {
+    font-size: 18px !important;
+  }
+  .swiper-button-prev::after{
+    font-size: 18px !important;
+  }
 }
 
 

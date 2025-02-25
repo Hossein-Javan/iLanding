@@ -771,7 +771,7 @@ section,
 
   .swiper-slide img {
     height:50vh !important;
-    object-fit: cover; /* حفظ نسبت تصویر بدون برش */
+    object-fit: contain; /* حفظ نسبت تصویر بدون برش */
   }
   .swiper-button-next::after  {
     font-size: 26px !important;

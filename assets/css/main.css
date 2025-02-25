@@ -770,12 +770,12 @@ section,
 /* ریسپانسیو برای تبلت */
 @media (max-width: 1024px) {
   .slider {
-    height: 50vh;
+    height: 60vh;
     padding-top: 70px;
   }
 
   .swiper-slide img {
-    height: 50vh;
+    height: 60vh;
   }
   .swiper-button-next::after {
     font-size: 26px !important;

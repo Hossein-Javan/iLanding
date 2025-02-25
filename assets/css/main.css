@@ -769,12 +769,12 @@ section,
 @media (min-width: 481px) and (max-width: 768px) {
   .slider {
     padding-top: 70px;
-    height: 50vh;
+    height: 40vh ;
   }
 
   .swiper-slide img {
-    height: 50vh;
-    object-fit: cover;
+    height: 40vh ;
+    object-fit: contain;
   }
 
   .swiper-button-next::after {

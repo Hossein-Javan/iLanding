@@ -741,6 +741,7 @@ section,
   .slider {
     padding-top: 70px;
     height:30vh !important; /* کاهش ارتفاع برای موبایل */
+    margin-top: 0;
   }
 
   .swiper-slide img {

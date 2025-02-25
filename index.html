@@ -96,7 +96,21 @@
               
                 <div class="swiper-slide">
                  
-                  <img class="slider-img" src="/assets/img/slider/slide1.jpg" alt="Slider Image">
+                  <img 
+                      class="slider-img" 
+                      src="/assets/img/slider/Desktop.jpg" 
+                      srcset="
+                        /assets/img/slider/Mobile.jpg 480w, 
+                        /assets/img/slider/Tablet.jpg 768w, 
+                        /assets/img/slider/Desktop.jpg 1920w
+                      "
+                      sizes="
+                        (max-width: 480px) 100vw, 
+                        (max-width: 768px) 100vw, 
+                        1920px
+                      "
+                      alt="Slider Image">
+
                 </div>
               <div class="swiper-slide">
               

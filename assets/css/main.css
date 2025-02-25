@@ -740,11 +740,11 @@ section,
 @media (max-width: 768px) {
   .slider {
     padding-top: 70px;
-    height30vh !important; /* کاهش ارتفاع برای موبایل */
+    height:30vh !important; /* کاهش ارتفاع برای موبایل */
   }
 
   .swiper-slide img {
-    height30vh !important;
+    height:30vh !important;
     object-fit: cover; /* حفظ نسبت تصویر بدون برش */
   }
 }

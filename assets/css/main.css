@@ -28,7 +28,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #2d465e; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #009746; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #1c73cd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -70,12 +70,20 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  text-align: justify;
+}
+ul {
+  text-align: justify;
+}
+li{
+  text-align: justify;
 }
 
 a {
   color: var(--accent-color);
   text-decoration: none;
   transition: 0.3s;
+  text-align: justify;
 }
 
 a:hover {
@@ -213,10 +221,11 @@ h6 {
 
   .navmenu a i,
   .navmenu a:focus i {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 0;
     margin-left: 5px;
     transition: 0.3s;
+    margin-right: 5px;
   }
 
   .navmenu li:last-child a {
@@ -257,7 +266,7 @@ h6 {
   }
 
   .navmenu .dropdown ul a i {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .navmenu .dropdown ul a:hover,
@@ -731,12 +740,26 @@ section,
 @media (max-width: 768px) {
   .slider {
     padding-top: 70px;
-    height: 30vh !important; /* کاهش ارتفاع برای موبایل */
+    height: 40vh; /* افزایش ارتفاع برای موبایل */
   }
 
   .swiper-slide img {
-    height: 30vh !important;
+    height: 40vh;
     object-fit: cover; /* حفظ نسبت تصویر بدون برش */
+  }
+
+  .swiper-slide {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  /* تنظیم دکمه‌های موجود در اسلایدر */
+  .swiper-slide .swiper-button-next,
+  .swiper-slide .swiper-button-prev {
+    z-index: 2;
   }
 }
 
@@ -748,8 +771,10 @@ section,
 
   .swiper-slide img {
     height: 60vh;
+    object-fit: cover;
   }
 }
+
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -1393,6 +1418,7 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 25%);
   font-size: 15px;
   margin-bottom: 0;
+  text-align: justify;
 }
 
 .features-2 .phone-mockup {
@@ -2459,3 +2485,31 @@ section,
   }
 }
 
+.header-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.header-image {
+  width: 100%;
+  height: auto;
+}
+.header-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: bold;
+}
+.header-text h1 {
+  margin: 0;
+}
+.header-text span.yellow {
+  color: yellow;
+}
+@media (max-width: 768px) {
+  .header-image {
+      margin-top: calc(10% + 15px);
+  }
+}

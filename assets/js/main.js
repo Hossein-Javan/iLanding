@@ -39,43 +39,48 @@ var swiper = new Swiper(".mySwiper", {
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
 
-  /**
-   * Mobile nav toggle
-   */
-  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+ /**
+ * Mobile nav toggle
+ */
+const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
-  function mobileNavToogle() {
+function mobileNavToogle() {
     document.querySelector('body').classList.toggle('mobile-nav-active');
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
-  }
-  if (mobileNavToggleBtn) {
+}
+if (mobileNavToggleBtn) {
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
-  }
+}
 
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
+/**
+ * Hide mobile nav on same-page/hash links (به جز مواردی که dropdown دارند)
+ */
+document.querySelectorAll('#navmenu a:not(.dropdown-toggle)').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
-      }
+        if (document.querySelector('.mobile-nav-active')) {
+            mobileNavToogle();
+        }
     });
+});
 
-  });
-
-  /**
-   * Toggle mobile nav dropdowns
-   */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
+/**
+ * Toggle mobile nav dropdowns (اصلاح برای جلوگیری از بسته شدن)
+ */
+document.querySelectorAll('.navmenu .dropdown > a').forEach(navmenu => {
     navmenu.addEventListener('click', function(e) {
-      e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-      e.stopImmediatePropagation();
+        e.preventDefault();
+        this.parentNode.classList.toggle('active'); // اضافه کردن کلاس active برای منوی والد
+        let dropdownMenu = this.nextElementSibling; // یافتن زیرمنو
+
+        if (dropdownMenu && dropdownMenu.tagName === "UL") {
+            dropdownMenu.classList.toggle('dropdown-active');
+        }
+
+        e.stopImmediatePropagation();
     });
-  });
+});
+
 
   /**
    * Scroll top button

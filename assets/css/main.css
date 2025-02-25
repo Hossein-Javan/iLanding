@@ -683,6 +683,7 @@ section,
   position: relative;
   padding: 0;
   overflow: hidden;
+  margin: 0;
 }
 
 .swiper {
@@ -754,7 +755,7 @@ section,
 @media (max-width: 1024px) {
   .slider {
     height: 60vh;
-    margin-top: 90px;
+    padding-top: 70px;
   }
 
   .swiper-slide img {

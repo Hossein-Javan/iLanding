@@ -747,12 +747,12 @@ section,
 /* موبایل */
 @media (max-width: 480px) {
   .slider {
-    height: 25vh;
+    height: 30vh;
     padding-top: 70px;
   }
 
   .swiper-slide img {
-    height: 25vh;
+    height: 30vh;
     object-fit: cover;
   }
 

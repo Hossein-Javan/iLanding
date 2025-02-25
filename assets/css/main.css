@@ -736,30 +736,52 @@ section,
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
+.swiper-button-next::after {
+  font-size: 30px ;
+ 
+}
+.swiper-button-prev::after{
+  font-size: 30px ;
 
+}
 /* ریسپانسیو برای موبایل */
 @media (max-width: 768px) {
   .slider {
     padding-top: 70px;
-    height:30vh !important; /* کاهش ارتفاع برای موبایل */
+    height:25vh !important; /* کاهش ارتفاع برای موبایل */
     margin-top: 0;
   }
 
   .swiper-slide img {
-    height:30vh !important;
+    height:25vh !important;
     object-fit: cover; /* حفظ نسبت تصویر بدون برش */
   }
+  .swiper-button-next::after  {
+    font-size: 20px !important;
+   
+  }
+  .swiper-button-prev::after {
+    font-size: 20px !important;
+   
+  }
+
 }
 
 /* ریسپانسیو برای تبلت */
 @media (max-width: 1024px) {
   .slider {
-    height: 60vh;
+    height: 50vh;
     padding-top: 70px;
   }
 
   .swiper-slide img {
-    height: 60vh;
+    height: 50vh;
+  }
+  .swiper-button-next::after {
+    font-size: 26px !important;
+  }
+  .swiper-button-prev::after{
+    font-size: 26px !important;
   }
 }
 
